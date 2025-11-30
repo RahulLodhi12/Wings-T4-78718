@@ -1,0 +1,31 @@
+package com.wings.configuration;
+import com.wings.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.stereotype.Component;
+
+import com.wings.model.RoleModel;
+import com.wings.model.UserModel;
+import com.wings.repository.RoleRepository;
+
+@Component
+public class DataLoader {
+
+	@Autowired
+	private RoleRepository roleRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+	
+	
+	
+	@Autowired
+	public void run(ApplicationArguments args) throws InterruptedException{
+		roleRepository.save(new RoleModel("BIDDER"));
+		roleRepository.save(new RoleModel("APPROVER"));
+		
+		userRepository.save(new UserModel(1,"bidder1","companyOne","bidder123$","bidderemail@gmail.com",new RoleModel(1)));
+		userRepository.save(new UserModel(2,"bidder2","companyTwo","bidder789$","bidderemail2@gmail.com",new RoleModel(1)));
+		userRepository.save(new UserModel(3,"approver","defaultCompany","approver123$","approveremail@gmail.com",new RoleModel(2)));
+	}
+}

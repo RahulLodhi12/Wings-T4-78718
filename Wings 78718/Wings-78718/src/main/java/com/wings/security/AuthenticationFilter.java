@@ -1,5 +1,7 @@
 package com.wings.security;
 
+
+
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -11,17 +13,24 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.wings.service.LoginService;
 
+
 public class AuthenticationFilter extends OncePerRequestFilter {
 
-	private JWTUtil jwtUtil;
-	
-	private LoginService loginService;
-	
-	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-	}
+   /*
+   AuthenticationFilter Can be used to filter the incoming requests
+    */
 
+    private JWTUtil jWTUtil;
+
+    private LoginService loginService;
+
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+        /*
+        Filter the incoming request, and verify the request meets the security criteria
+         */
+
+    }
 }

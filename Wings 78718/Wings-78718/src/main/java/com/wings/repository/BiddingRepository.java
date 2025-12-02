@@ -1,9 +1,12 @@
 package com.wings.repository;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.wings.model.BiddingModel;
 
-public interface BiddingRepository extends JpaRepository<BiddingModel, Integer> {
 
+public interface BiddingRepository extends JpaRepository<BiddingModel,Integer> {
+
+    //Add the required annotations to make the BiddingRepository
 }
